@@ -1,8 +1,8 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import { User } from "../../data/models/User.jsx";
-import { CreateUserUseCase } from "../../domain/CreateUserUseCase.jsx";
+import { RFC } from "../../data/models/RFC.jsx";
+import { getRFCUseCase } from "../../domain/GetRFCUseCase.jsx";
 
-export class UserViewModel {
+export class RFCViewModel {
   curp = "";
   name = "";
   email = "";
@@ -13,7 +13,7 @@ export class UserViewModel {
 
   constructor() {
     makeAutoObservable(this);
-    this.createUserUseCase = new CreateUserUseCase();
+    this.getRFCUseCase = new getRFCUseCase();
   }
 
   onChangeCurp(curp) {

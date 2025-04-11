@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router";
 import image from "../../../../core/assets/form-image.png"
-import "./createUser.css";
+import "./getRFC.css";
 
 export const RFCView = observer(({ viewModel }) => {
   const navigate = useNavigate();
@@ -39,6 +39,8 @@ export const RFCView = observer(({ viewModel }) => {
               onChange={(e) => viewModel.onChangeCurp(e.target.value)}
             />
 
+            <label htmlFor="">¿No conoces tu CURP? <a href="https://www.gob.mx/curp/">Consultala aqui</a></label>
+
             {viewModel.error && (
               <div className="error">{viewModel.error}</div>
             )}
@@ -51,4 +53,4 @@ export const RFCView = observer(({ viewModel }) => {
   );
 });
 
-export default UserView;
+export default RFCView;
