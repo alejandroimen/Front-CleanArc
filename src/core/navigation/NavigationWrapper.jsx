@@ -1,16 +1,11 @@
 import { createBrowserRouter } from "react-router"; 
-import NoteView from "../../features/users/presentation/pages/NoteView";
-import Dashboard from "../../features/dashboard/presentation/pages/Dashboard";
-import { NoteViewModel } from "../../features/users/presentation/viewmodels/NoteViewModel";
+import { UserViewModel } from "../../features/Users/presentation/viewmodels/createUserViewModel.jsx";
+import UserView from "../../features/Users/presentation/pages/createUser.jsx";
 
-const noteViewModel = new NoteViewModel()
+const userViewModel = new UserViewModel()
 export const navigationWrapper = createBrowserRouter([
     {
         path: "/",
-        element: <NoteView viewModel={noteViewModel} />,
+        element: <UserView viewModel={userViewModel} />,
     },
-    {
-        path: "/dashboard",
-        element: <Dashboard />,
-    }
 ]);
